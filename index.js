@@ -73,5 +73,5 @@ app.get("/thank-you", (req, res) => {
   res.render("thank-you"); // Create a thank-you.ejs file with your thank you message
 });
 
-// Export as a serverless function using `serverless-http`
-export const handler = serverless(app);
+// Export Express app wrapped in serverless-http as the default export
+export default serverless(app);
