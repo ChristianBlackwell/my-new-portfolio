@@ -66,7 +66,3 @@ app.post("/submit-form", (req, res) => {
 app.get("/thank-you", (req, res) => {
   res.render("thank-you"); // Create a thank-you.ejs file with your thank you message
 });
-
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-});
