@@ -1,7 +1,8 @@
-const express = require("express");
-const nodemailer = require("nodemailer");
-const dotenv = require("dotenv");
-const path = require("path");
+import express from "express";
+import nodemailer from "nodemailer";
+import dotenv from "dotenv";
+import path from "path";
+const __dirname = path.resolve();
 
 dotenv.config();
 
