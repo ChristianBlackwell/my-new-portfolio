@@ -1,4 +1,5 @@
 import express from "express";
+import nodemailer from "nodemailer";
 import dotenv from "dotenv";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -7,6 +8,7 @@ import serverless from "serverless-http";
 dotenv.config();
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 // Fix __dirname in ES module scope
 const __filename = fileURLToPath(import.meta.url);
@@ -22,34 +24,54 @@ app.set("view engine", "ejs");
 
 // Routes
 app.get("/", (req, res) => {
-  console.log("Rendering index");
   res.render("index");
 });
 
 app.get("/about", (req, res) => {
-  console.log("Rendering about");
   res.render("about");
 });
 
 app.get("/projects", (req, res) => {
-  console.log("Rendering projects");
   res.render("projects");
 });
 
 app.get("/contact", (req, res) => {
-  console.log("Rendering contact");
   res.render("contact");
 });
 
 app.get("/thank-you", (req, res) => {
-  console.log("Rendering thank-you");
   res.render("thank-you");
 });
 
-// Temporary form submission route without email sending
+// POST route for form submission
 app.post("/submit-form", (req, res) => {
-  console.log("Received form submission:", req.body);
-  // For now, just log the form data and redirect to thank you page
+  const { name, email, text } = req.body;
+
+  const transporter = nodemailer.createTransport({
+    service: "outlook",
+    auth: {
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
+    },
+  });
+
+  const mailOptions = {
+    from: process.env.EMAIL_USER,
+    to: "christian.blackwell@outlook.com",
+    subject: "New Contact Form Submission",
+    text: `You have a new contact form submission:\n\nName: ${name}\nEmail: ${email}\nComment: ${text}`,
+  };
+
+  // Send the email asynchronously without blocking the response
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      console.log("Error sending email:", error);
+    } else {
+      console.log("Email sent: " + info.response);
+    }
+  });
+
+  // Immediately send response to user
   res.redirect("/thank-you");
 });
 
