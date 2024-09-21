@@ -20,8 +20,9 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // Set the views directory and view engine
 app.set("views", path.join(__dirname, "views"));
-app.set("view engine", "ejs"); // Make sure this line is here
+app.set("view engine", "ejs");
 
+// Routes
 app.get("/", (req, res) => {
   res.render("index");
 });
@@ -38,10 +39,11 @@ app.get("/contact", (req, res) => {
   res.render("contact");
 });
 
-app.get("*", (req, res) => {
-  res.redirect("/");
+app.get("/thank-you", (req, res) => {
+  res.render("thank-you");
 });
 
+// POST route for form submission
 app.post("/submit-form", (req, res) => {
   const { name, email, text } = req.body;
 
@@ -60,19 +62,21 @@ app.post("/submit-form", (req, res) => {
     text: `You have a new contact form submission:\n\nName: ${name}\nEmail: ${email}\nComment: ${text}`,
   };
 
+  // Send the email asynchronously without blocking the response
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
-      console.log(error);
-      res.status(500).send("Error sending email");
+      console.log("Error sending email:", error);
     } else {
       console.log("Email sent: " + info.response);
-      res.redirect("/thank-you"); // Redirect to a thank you page
     }
   });
+
+  // Immediately send response to user
+  res.redirect("/thank-you");
 });
 
-app.get("/thank-you", (req, res) => {
-  res.render("thank-you"); // Create a thank-you.ejs file with your thank you message
+app.get("*", (req, res) => {
+  res.redirect("/");
 });
 
 // Export Express app wrapped in serverless-http as the default export
