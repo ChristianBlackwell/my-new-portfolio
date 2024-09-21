@@ -18,8 +18,9 @@ const __dirname = path.dirname(__filename);
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
-// Set the views directory
+// Set the views directory and view engine
 app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs"); // Make sure this line is here
 
 app.get("/", (req, res) => {
   res.render("index");
