@@ -2,7 +2,7 @@ import express from "express";
 import nodemailer from "nodemailer";
 import dotenv from "dotenv";
 import path from "path";
-const __dirname = path.resolve();
+import serverless from "serverless-http";
 
 dotenv.config();
 
@@ -67,3 +67,6 @@ app.post("/submit-form", (req, res) => {
 app.get("/thank-you", (req, res) => {
   res.render("thank-you"); // Create a thank-you.ejs file with your thank you message
 });
+
+// Export as a serverless function using `serverless-http`
+export const handler = serverless(app);
