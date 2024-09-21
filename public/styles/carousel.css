@@ -1,0 +1,102 @@
+.carousel {
+  position: relative;
+  max-width: 850px;
+  margin: auto;
+  overflow: hidden;
+}
+
+#carousel-container {
+  margin-top: 50px;
+  margin-bottom: 200px;
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: 100%;
+}
+
+.carousel-item {
+  min-width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.carousel-item img {
+  width: 90%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.project-links .btn {
+  display: inline-block;
+  margin: 10px 5px;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: white;
+  background-color: #007bff;
+  border-radius: 4px;
+}
+.weather-app-image {
+  height: 450px !important; /* Adjust as needed */
+  width: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Ensures the image fits within its container */
+}
+
+.technologies {
+  margin-top: 10px;
+}
+
+.technologies p {
+  color: black;
+}
+
+.tech-icon img {
+  width: 45px;
+  height: auto;
+  margin: 0 5px;
+}
+
+.css-icon img {
+  width: 33px; /* Adjust the width to your preference */
+  height: auto;
+}
+
+.js-icon img {
+  width: 43px; /* Adjust the width to your preference */
+  height: auto;
+}
+
+.tmdb-icon img {
+  width: 43px; /* Adjust the width to your preference */
+  height: auto;
+}
+
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 10px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 3px;
+}
+
+.carousel-control.prev {
+  left: 10px;
+  opacity: 0.75;
+}
+
+.carousel-control.next {
+  right: 10px;
+  opacity: 0.75;
+}

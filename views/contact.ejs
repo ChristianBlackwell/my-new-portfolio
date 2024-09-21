@@ -1,0 +1,36 @@
+<%- include("partials/header.ejs") %>
+<main>
+  <h1>Contact Me</h1>
+  <form action="/submit-form" method="POST">
+    <div>
+      <input
+        name="name"
+        type="text"
+        class="feedback-input"
+        placeholder="Name"
+        required
+        aria-required="true"
+        title="Please enter your name."
+      />
+      <input
+        name="email"
+        type="email"
+        class="feedback-input"
+        placeholder="Email"
+        required
+        aria-required="true"
+        title="Please enter a valid email address."
+      />
+      <textarea
+        name="text"
+        class="feedback-input"
+        placeholder="Comment"
+        required
+        aria-required="true"
+        title="Please enter your comment."
+      ></textarea>
+      <input type="submit" value="SUBMIT" />
+    </div>
+  </form>
+</main>
+<%- include("partials/footer.ejs") %>
