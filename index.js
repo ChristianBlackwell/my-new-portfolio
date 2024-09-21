@@ -29,6 +29,10 @@ app.get("/contact", (req, res) => {
   res.render("contact");
 });
 
+app.get("*", (req, res) => {
+  res.redirect("/");
+});
+
 app.post("/submit-form", (req, res) => {
   const { name, email, text } = req.body;
 
