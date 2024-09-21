@@ -2,6 +2,7 @@ import express from "express";
 import nodemailer from "nodemailer";
 import dotenv from "dotenv";
 import path from "path";
+import { fileURLToPath } from "url";
 import serverless from "serverless-http";
 
 dotenv.config();
@@ -9,16 +10,12 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.use(express.urlencoded({ extended: true }));
-
-import { fileURLToPath } from "url";
-import path from "path";
-
-// Fix __dirname for ES modules
+// Fix __dirname in ES module scope
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Serve static files
+// Middleware
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
 app.set("view engine", "ejs");
