@@ -1,6 +1,7 @@
 const express = require("express");
 const nodemailer = require("nodemailer");
 const dotenv = require("dotenv");
+const path = require("path");
 
 dotenv.config();
 
@@ -9,7 +10,7 @@ const port = process.env.PORT || 3000;
 
 app.use(express.urlencoded({ extended: true }));
 
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "public")));
 
 app.set("view engine", "ejs");
 
