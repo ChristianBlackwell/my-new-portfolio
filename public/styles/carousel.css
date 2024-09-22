@@ -102,7 +102,7 @@
 }
 
 @media (max-width: 991px) {
-  .carousel-item {
+  #carousel-container {
     max-width: 75%;
   }
 }
