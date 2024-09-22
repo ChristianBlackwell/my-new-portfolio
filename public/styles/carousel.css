@@ -108,18 +108,21 @@
     padding: 10px; /* Add some padding so the carousel doesn’t touch the edges */
   }
 
-  /* Adjust the size of the carousel items for mobile */
+  /* Keep the carousel responsive, but limit the image sizes */
   .carousel-item {
+    display: flex; /* Use flexbox to align images horizontally */
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    flex-wrap: wrap; /* Allow wrapping if needed */
     padding: 10px;
-    font-size: 14px; /* Reduce font size for better readability on mobile */
   }
 
-  /* Make the images fit better on smaller screens */
+  /* Set a fixed width for each image */
   .carousel-item img {
-    width: 100%; /* Make the image fit the width of the carousel */
-    height: auto; /* Maintain aspect ratio */
-    max-height: 300px; /* Limit the height of the image */
-    object-fit: contain; /* Make sure the image scales properly inside the container */
+    width: 150px; /* Set a small fixed width for each image */
+    height: auto; /* Maintain the aspect ratio */
+    margin: 5px; /* Add some space between images */
+    object-fit: contain; /* Ensure the images fit without being distorted */
   }
 
   /* Adjust the size and position of the previous/next buttons */
@@ -131,10 +134,10 @@
   }
 
   .carousel-control.prev {
-    left: 5px; /* Slightly more padding from the left edge */
+    left: 5px;
   }
 
   .carousel-control.next {
-    right: 5px; /* Slightly more padding from the right edge */
+    right: 5px;
   }
 }
