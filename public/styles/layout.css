@@ -136,18 +136,6 @@ i {
   #navbarSupportedContent ul li a {
     padding: 12px 30px;
   }
-  .navbar-collapse {
-    display: flex;
-    justify-content: center; /* This centers the menu horizontally */
-  }
-
-  .navbar-nav {
-    flex-direction: row; /* Set nav items to display in a row (horizontally) */
-  }
-
-  .navbar-nav .nav-item {
-    margin-right: 15px; /* Optional: adds space between nav items */
-  }
   .hori-selector {
     margin-top: 0px;
     margin-left: 10px;
