@@ -126,11 +126,11 @@
 
   .carousel-control.prev {
     opacity: 0.75;
-    right: 1px;
+    left: 1px;
   }
 
   .carousel-control.next {
     opacity: 0.75;
-    left: 1px;
+    right: 1px;
   }
 }
