@@ -119,16 +119,17 @@
 
   /* Adjust the size and position of the previous/next buttons */
   .carousel-control {
-    width: 30px; /* Smaller width for the controls */
-    height: 30px; /* Smaller height for the controls */
-    font-size: 16px; /* Reduce the font size */
+    width: auto; /* Smaller width for the controls */
+    font-size: 14px; /* Reduce the font size */
   }
 
   .carousel-control.prev {
     left: 5px;
+    opacity: 0.75;
   }
 
   .carousel-control.next {
     right: 5px;
+    opacity: 0.75;
   }
 }
