@@ -119,7 +119,8 @@
 
   /* Adjust the size and position of the previous/next buttons */
   .carousel-control {
-    width: auto; /* Smaller width for the controls */
+    width: 25px; /* Smaller width for the controls */
+    height: auto;
     font-size: 14px; /* Reduce the font size */
   }
 
