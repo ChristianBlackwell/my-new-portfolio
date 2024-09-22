@@ -116,8 +116,10 @@
 
   /* Make the images fit better on smaller screens */
   .carousel-item img {
-    width: 100%; /* Make the images fill the carousel item container */
+    width: 100%; /* Make the image fit the width of the carousel */
     height: auto; /* Maintain aspect ratio */
+    max-height: 300px; /* Limit the height of the image */
+    object-fit: contain; /* Make sure the image scales properly inside the container */
   }
 
   /* Adjust the size and position of the previous/next buttons */
