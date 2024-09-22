@@ -119,16 +119,18 @@
 
   /* Adjust the size and position of the previous/next buttons */
   .carousel-control {
-    width: 5px;
+    width: 2px;
     height: auto;
     font-size: 10px; /* Reduce the font size */
   }
 
   .carousel-control.prev {
     opacity: 0.75;
+    right: 1px;
   }
 
   .carousel-control.next {
     opacity: 0.75;
+    left: 1px;
   }
 }
