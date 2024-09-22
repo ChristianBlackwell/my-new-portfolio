@@ -100,3 +100,9 @@
   right: 10px;
   opacity: 0.75;
 }
+
+@media (max-width: 991px) {
+  .carousel-item {
+    max-width: 75%;
+  }
+}
