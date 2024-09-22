@@ -120,7 +120,8 @@
   /* Adjust the size and position of the previous/next buttons */
   .carousel-control {
     top: 50%;
-    transform: translateY(-50%); /* Adjust for perfect vertical centering */
+    width: 30px; /* Adjust width as needed */
+    height: 30px; /* Adjust height as needed */
     font-size: 12px; /* Reduce the font size */
   }
 
