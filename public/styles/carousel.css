@@ -120,8 +120,6 @@
   /* Adjust the size and position of the previous/next buttons */
   .carousel-control {
     top: 50%;
-    width: 30px; /* Adjust width as needed */
-    height: 30px; /* Adjust height as needed */
     font-size: 12px; /* Reduce the font size */
   }
 
