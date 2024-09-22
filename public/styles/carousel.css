@@ -102,7 +102,37 @@
 }
 
 @media (max-width: 991px) {
-  #carousel-container {
-    max-width: 75%;
+  /* Reduce the size of the carousel on mobile */
+  .carousel {
+    max-width: 100%; /* Make the carousel fill the screen width */
+    padding: 10px; /* Add some padding so the carousel doesn’t touch the edges */
+  }
+
+  /* Adjust the size of the carousel items for mobile */
+  .carousel-item {
+    padding: 10px;
+    font-size: 14px; /* Reduce font size for better readability on mobile */
+  }
+
+  /* Make the images fit better on smaller screens */
+  .carousel-item img {
+    width: 100%; /* Make the images fill the carousel item container */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  /* Adjust the size and position of the previous/next buttons */
+  .carousel-control {
+    width: 30px; /* Smaller width for the controls */
+    height: 30px; /* Smaller height for the controls */
+    font-size: 16px; /* Reduce the font size */
+    top: 80%; /* Lower the position so they don’t overlap text */
+  }
+
+  .carousel-control.prev {
+    left: 5px; /* Slightly more padding from the left edge */
+  }
+
+  .carousel-control.next {
+    right: 5px; /* Slightly more padding from the right edge */
   }
 }
