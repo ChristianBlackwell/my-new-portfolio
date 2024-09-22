@@ -104,7 +104,6 @@
 @media (max-width: 991px) {
   /* Reduce the size of the carousel on mobile */
   .carousel {
-    top: 50%;
     max-width: 100%; /* Make the carousel fill the screen width */
     padding: 10px; /* Add some padding so the carousel doesn’t touch the edges */
   }
@@ -120,6 +119,7 @@
 
   /* Adjust the size and position of the previous/next buttons */
   .carousel-control {
+    top: 50%;
     font-size: 12px; /* Reduce the font size */
   }
 
