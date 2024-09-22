@@ -119,10 +119,8 @@
 
   /* Set a fixed width for each image */
   .carousel-item img {
-    width: 25%; /* Set a small fixed width for each image */
+    width: 10%; /* Set a small fixed width for each image */
     height: auto; /* Maintain the aspect ratio */
-    margin: 5px; /* Add some space between images */
-    object-fit: contain; /* Ensure the images fit without being distorted */
   }
 
   /* Adjust the size and position of the previous/next buttons */
